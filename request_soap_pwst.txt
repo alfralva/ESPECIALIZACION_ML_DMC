@@ -1,0 +1,77 @@
+curl --location 'https://analyzer-cp.pwstasp.com.uy/ws/ReportManager.asmx' \
+--header 'Content-Type: text/xml; charset=utf-8' \
+--header 'SOAPAction: "http://analyzer.pwstasp.com.uy/reportmanager/RunReport"' \
+--data '<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <AuthorizationHeader xmlns="http://analyzer.pwstasp.com.uy/reportmanager">
+      <User>ehvanaic1</User>
+      <Password>Pwst1234*</Password>
+    </AuthorizationHeader>
+  </soap:Header>
+  <soap:Body>
+    <RunReport xmlns="http://analyzer.pwstasp.com.uy/reportmanager">
+      <xmlreport><![CDATA[
+
+<ReportView>
+
+  <CubeID>603</CubeID>
+
+  <emptyrow>0</emptyrow>
+  <emptycol>0</emptycol>
+
+  <rowtotals>1</rowtotals>
+  <coltotals>1</coltotals>
+
+  <Dimensiones>
+
+    <!-- FILAS -->
+    <ReportDimension>
+      <uniquename>[Clientes].[Distribuidores]</uniquename>
+      <levels>
+        <ReportDimensionLevel>
+            <uniquename>[Clientes].[Distribuidores].[Distribuidor]</uniquename>
+            <axis>1</axis>
+        </ReportDimensionLevel>
+      </levels>
+      <axis>1</axis>
+    </ReportDimension>
+
+
+    <!-- MEDIDA CORRECTA -->
+    <ReportDimension>
+      <uniquename>[Measures].[Importe Neto]</uniquename>
+      <axis>3</axis>
+    </ReportDimension>
+
+
+    <ReportDimension>
+      <uniquename>[Measures].[Productividad - venta neta]</uniquename>
+      <axis>3</axis>
+    </ReportDimension>
+
+    <!-- COLUMNAS -->
+    <ReportDimension>
+      <uniquename>[Fecha].[Año]</uniquename>
+      <levels>
+        <ReportDimensionLevel>
+            <uniquename>[Fecha].[Año].[Año]</uniquename>
+            <axis>0</axis>
+        </ReportDimensionLevel>
+      </levels>
+      <members>
+        <levelid />
+        <leveluniquename />
+      </members>
+      <axis>0</axis>
+      <isMemberList>0</isMemberList>
+    </ReportDimension>
+  </Dimensiones>
+
+</ReportView>
+
+]]></xmlreport>
+    </RunReport>
+  </soap:Body>
+</soap:Envelope>
+'
