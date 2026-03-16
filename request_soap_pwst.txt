@@ -75,3 +75,13 @@ curl --location 'https://analyzer-cp.pwstasp.com.uy/ws/ReportManager.asmx' \
   </soap:Body>
 </soap:Envelope>
 '
+
+
+
+curl --location 'https://analyzer.pwstasp.com.uy/login.ashx?a=logoff' \
+--header 'Cookie: ASP.NET_SessionId=uub45bzjcmqivflgbvjabvws; AnalyzerSessionData=bc9WO5y6CscOpwhlZCZRZw6qSdwylrqzVlYiWB+FM3dsUTzX0ELq5bLzRnQVsnjMIUn5H5UdWzAPQKlxVoINnQ=='
+
+
+
+curl --location 'https://analyzer.pwstasp.com.uy/login.ashx?a=login&u=ehvanaic1&p=Pwst1234*' \
+--header 'Cookie: ASP.NET_SessionId=uub45bzjcmqivflgbvjabvws; AnalyzerSessionData=bc9WO5y6CscOpwhlZCZRZw6qSdwylrqzVlYiWB+FM3dsUTzX0ELq5bLzRnQVsnjMIUn5H5UdWzAPQKlxVoINnQ=='
